@@ -21,19 +21,19 @@ public class BattlePanel extends JPanel {
         this.sp = sp;
     }
 
-    public String attack(Player Slime) {
+    public void attack(Player Slime) {
         Random rnd = new Random();
         int damage = rnd.nextInt(10) + 1;
         Slime.dealDamage(damage);
-        return (getUserName() + " deals " + damage + " to " + Slime.getUserName()) +
-        (Slime.getUserName() + " has " + Slime.getHp() + " hit points left!");
+	System.out.println((getUserName() + " deals " + damage + " to " + Slime.getUserName()) +
+        (Slime.getUserName() + " has " + Slime.getHp() + " hit points left!"));
     }
-    public String useMagic(Player Slime) {
+    public void useMagic(Player Slime) {
         Random rnd = new Random();
         int damage = rnd.nextInt(21) + 10;
         Slime.dealMagicDamage(damage);
-        return (getUserName() + " casts Frizz and deals " + damage + " to " + Slime.getUserName()) +
-        (Slime.getUserName() + " has " + Slime.getHp() + " hit points left!");
+        System.out.println ((getUserName() + " casts Frizz and deals " + damage + " to " + Slime.getUserName()) +
+        (Slime.getUserName() + " has " + Slime.getHp() + " hit points left!"));
     }
 
     public void dealDamage(int damage) {
@@ -111,9 +111,12 @@ public class BattlePanel extends JPanel {
                 Hero.dealMagicDamage();
             }
             if(e.getSource() == button3){
-                System.out.println(Hero.useMagic());
-                Hero.dealMagicDamage();
+                Hero.usePotion();
             }
+            if(e.getSource() == button4){
+                Hero.useEther();
+            }
+	}
 	}
 	}
 }
