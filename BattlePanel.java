@@ -78,7 +78,7 @@ public class BattlePanel extends JPanel {
 	
 	public BattlePanel() {
 		setPreferredSize(new Dimension(300, 75));
-	    setBackground(Color.black);
+	    	setBackground(Color.black);
 	    
 		JLabel label1 = new JLabel("A blue slime draws near!");
 		JButton button1 = new JButton("Attack");
@@ -86,16 +86,16 @@ public class BattlePanel extends JPanel {
 		JButton button3 = new JButton("Potion");
 		JButton button4 = new JButton("Ether");
 
-	    button1.addActionListener(new dealDamage());
-	    button2.addActionListener(new DealMagicDamage());
-	    button3.addActionListener(new usePotion());
-	    button4.addActionListener(new useEther());
+	    	button1.addActionListener(new dealDamage());
+	    	button2.addActionListener(new DealMagicDamage());
+	    	button3.addActionListener(new usePotion());
+	    	button4.addActionListener(new useEther());
 	    
-	    add(label1);
-	    add(button1);
-	    add(button2);
-	    add(button3);
-	    add(button4);
+	    	add(label1);
+	    	add(button1);
+	    	add(button2);
+	    	add(button3);
+	    	add(button4);
 	   
 	    
 	    public void actionPerformed(ActionEvent e)
