@@ -1,4 +1,3 @@
-package dragonquest;
 
 import java.awt.*;
 import javax.swing.*;

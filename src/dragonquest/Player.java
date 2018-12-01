@@ -1,4 +1,3 @@
-package dragonquest;
 
 import java.awt.event.*;
 import java.util.Random;
