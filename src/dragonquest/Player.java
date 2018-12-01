@@ -4,11 +4,10 @@ import java.util.Random;
 
 public class Player 
 {
-	Player Hero = new Player("Hero", 50, 20);
-    Player Slime = new Player("Slime", 50, 20);
+
     private final String userName;
-    private int hp;
-    private int mp;
+    protected int hp;
+    protected int mp;
 
     public Player(String userName, int hp, int mp) 
     {
@@ -82,26 +81,7 @@ public class Player
     
     public int getMp() { return mp; }
     
-    public void actionPerformed(ActionEvent e)
-    {
-        //Execute when button is pressed
-
-        if(e.getSource() == button1){
-            System.out.println(Hero.attack());
-            Hero.dealDamage();
-        }
-
-        if(e.getSource() == button2){
-            System.out.println(Hero.useMagic());
-            Hero.dealMagicDamage();
-        }
-
-        if(e.getSource() == button3){
-            Hero.usePotion();
-        }
-
-        if(e.getSource() == button4){
-            Hero.useEther();
-        }
-    }
+    public void setHp(int hp) { this.hp = hp; }
+    
+    public void setMp(int mp) { this.mp = mp; }
 }
