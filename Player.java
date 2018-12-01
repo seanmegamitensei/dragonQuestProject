@@ -1,5 +1,5 @@
 package test;
-import java.awt.event.ActionEvent;
+import java.awt.event.*;
 import java.util.Random;
 
 public class Player{
