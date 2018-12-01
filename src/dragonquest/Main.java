@@ -12,7 +12,7 @@ public class Main
     	tp.addTab("Welcome", new WelcomePanel());
     	tp.addTab("Help", new HelpPanel());
     	tp.addTab("Easy", new EasyPanel());
-//    	tp.addTab("Medium", new MediumPanel());
+    	tp.addTab("Medium", new MediumPanel());
     	
     	frame.getContentPane().add(tp);
 		frame.pack();

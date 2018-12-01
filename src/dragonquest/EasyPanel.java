@@ -22,7 +22,7 @@ public class EasyPanel extends JPanel implements ActionListener
 		mediaPlayer.play();
 		Player hero = new Player("Hero", 50, 20);
 	    Player slime = new Player("Slime", 50, 20);
-		setPreferredSize(new Dimension(500, 700));
+		setPreferredSize(new Dimension(525, 700));
 	    setBackground(Color.black);
 	    
 		JLabel hpmp = new JLabel("HP: " + hero.getHp() + " MP: " + hero.getMp());
@@ -35,7 +35,8 @@ public class EasyPanel extends JPanel implements ActionListener
 		JButton magic = new JButton("Magic");
 		JButton potion = new JButton("Potion");
 		JButton ether = new JButton("Ether");
-		JLabel label1 = new JLabel("A blue slime draws near!");
+		JButton reset = new JButton("Reset");
+		JLabel label1 = new JLabel("A blue slime draws near! Command?");
 		label1.setFont(new Font("Serif", Font.PLAIN, 20));
 		label1.setForeground (Color.white);
 	    
@@ -45,42 +46,71 @@ public class EasyPanel extends JPanel implements ActionListener
 		    @Override
 		    public void actionPerformed(ActionEvent e)
 		    {
-		        Random rnd = new Random();
-		        int damage = rnd.nextInt(10) + 1;
+		    	Random rnd = new Random();
+			    int damage = rnd.nextInt(10) + 1;
+			    
+		    	if (hero.getHp() >= 0 && slime.getHp() >= 0) { 
 		        slime.hp -= damage;
 		        hpmp.setText("HP: " + hero.getHp() + " MP: " + hero.getMp());
 		        label1.setText("You dealt " + damage + " to the blue slime!" +
 		        		" Slime now has " + slime.hp + " health!");
+		    	}
+		    	if (hero.getHp() <= 0) {
+		        	label1.setText("You have fainted!!!"); }
+		        if (slime.getHp() <= 0) {
+		        	label1.setText("You landed a finishing blow for " + damage + "! The blue slime has fainted!!!"); }
+		        
+//		        if (hero.getHp() >= 0 && slime.getHp() >= 0) { 
+//				Random rnd = new Random();
+//				int damage = rnd.nextInt(10) + 1;
+//				hero.hp -= damage;
+//				hpmp.setText("HP: " + hero.getHp() + " MP: " + hero.getMp());
+//				label1.setText("The blue slime dealt " + damage + " to you!");
+//		        }
+//		        else if (hero.getHp() <= 0) {
+//		        	label1.setText("You have fainted!!!"); }
 		    }
 		});
 		magic.addActionListener( new ActionListener()
 		{
 		    @Override
-		    public void actionPerformed(ActionEvent e)
-		    {	
+		    public void actionPerformed(ActionEvent e) {
+			Random rnd = new Random();
+    		int damage = rnd.nextInt(20) + 1;
+		    {	if (hero.getHp() >= 0 && slime.getHp() >= 0) { 
 		    	if (hero.mp >= 4) {
-		    		Random rnd = new Random();
-		    		int damage = rnd.nextInt(20) + 1;
 		    		slime.hp -= damage;
 		    		hero.setMp(hero.mp -= 4);
 		    		hpmp.setText("HP: " + hero.getHp() + " MP: " + hero.getMp());
-		    		label1.setText("You dealt " + damage + " to the blue slime!" +
+		    		label1.setText("You cast frizz for " + damage + " to the blue slime!" +
 		        		" Slime now has " + slime.hp + " health!");
 		    	}
 		    	else
-		    		label1.setText("You don't have enough MP!");
+			        label1.setText("You don't have enough MP!");
+		    	}
+		    if (hero.getHp() <= 0) {
+	        	label1.setText("You have fainted!!!"); }
+	        if (slime.getHp() <= 0) {
+	        	label1.setText("You landed a finishing blow for " + damage + "! The blue slime has fainted!!!"); }
 		    }
+		    	
+		    }
+		   
 		});
 		potion.addActionListener( new ActionListener()
 		{
 		    @Override
 		    public void actionPerformed(ActionEvent e)
 		    {
+		    	if (hero.getHp() >= 0) {
 		        hero.setHp(hero.hp += 15);
 		        hero.getHp();
 		        hpmp.setText("HP: " + hero.getHp() + " MP: " + hero.getMp());
 		        label1.setText("You used a potion!" +
 		        		" You now have " + hero.getHp() + " health!");
+		    	}
+		    	else
+		    		label1.setText("You are already dead!");
 		    }
 		});
 		ether.addActionListener( new ActionListener()
@@ -94,12 +124,25 @@ public class EasyPanel extends JPanel implements ActionListener
 		        		" You now have " + hero.getMp() + " magic points!");
 		    }
 		});
+		reset.addActionListener( new ActionListener()
+		{
+		    @Override
+		    public void actionPerformed(ActionEvent e)
+		    {
+		    	hero.setHp(50);
+		    	hero.setMp(20);
+		    	slime.setHp(50);
+		    	slime.setMp(20);
+			    label1.setText("The blue slime draws near! Command?");
+		    }
+		});
 		add(hpmp);
 		add(enemyImage);
 	    add(attack);
 	    add(magic);
 	    add(potion);
 	    add(ether);
+	    add(reset);
 	    add(space);
 	    add(label1);
 	}
