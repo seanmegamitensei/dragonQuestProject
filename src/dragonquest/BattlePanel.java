@@ -49,7 +49,7 @@ public class BattlePanel extends JPanel implements ActionListener
 		        int damage = rnd.nextInt(10) + 1;
 		        slime.hp -= damage;
 		        hpmp.setText("HP: " + hero.getHp() + " MP: " + hero.getMp());
-		        label1.setText("You dealt " + damage + " to the blue slime!\n" +
+		        label1.setText("You dealt " + damage + " to the blue slime!" +
 		        		" Slime now has " + slime.hp + " health!");
 		    }
 		});
@@ -64,7 +64,7 @@ public class BattlePanel extends JPanel implements ActionListener
 		    		slime.hp -= damage;
 		    		hero.setMp(hero.mp -= 4);
 		    		hpmp.setText("HP: " + hero.getHp() + " MP: " + hero.getMp());
-		    		label1.setText("You dealt " + damage + " to the blue slime!\n" +
+		    		label1.setText("You dealt " + damage + " to the blue slime!" +
 		        		" Slime now has " + slime.hp + " health!");
 		    	}
 		    	else
@@ -79,7 +79,7 @@ public class BattlePanel extends JPanel implements ActionListener
 		        hero.setHp(hero.hp += 15);
 		        hero.getHp();
 		        hpmp.setText("HP: " + hero.getHp() + " MP: " + hero.getMp());
-		        label1.setText("You used a potion!!\n" +
+		        label1.setText("You used a potion!" +
 		        		" You now have " + hero.getHp() + " health!");
 		    }
 		});
@@ -90,7 +90,7 @@ public class BattlePanel extends JPanel implements ActionListener
 		    {
 		        hero.setMp(hero.mp += 15);
 		        hpmp.setText("HP: " + hero.getHp() + " MP: " + hero.getMp());
-		        label1.setText("You used an ether!\n" +
+		        label1.setText("You used an ether!" +
 		        		" You now have " + hero.getMp() + " magic points!");
 		    }
 		});

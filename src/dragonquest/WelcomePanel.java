@@ -14,7 +14,7 @@ public class WelcomePanel extends JPanel
 		
 		JLabel label1 = new JLabel("Slime Time!" );
 		label1.setForeground (Color.white);
-		label1.setFont(new Font("Serif", Font.PLAIN, 40));
+		label1.setFont(new Font("Serif", Font.PLAIN, 25));
 		JLabel label2 = new JLabel("Created By: Sean Lovett" );
 		label2.setForeground (Color.white);
 		label2.setFont(new Font("Serif", Font.PLAIN, 40));
