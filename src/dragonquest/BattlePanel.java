@@ -48,8 +48,9 @@ public class BattlePanel extends JPanel implements ActionListener
 		        Random rnd = new Random();
 		        int damage = rnd.nextInt(10) + 1;
 		        slime.hp -= damage;
-		        System.out.println("You dealt " + damage + " to the blue slime!\n" +
-		        		"Slime now has " + slime.hp + " health!");
+		        hpmp.setText("HP: " + hero.getHp() + " MP: " + hero.getMp());
+		        label1.setText("You dealt " + damage + " to the blue slime!\n" +
+		        		" Slime now has " + slime.hp + " health!");
 		    }
 		});
 		magic.addActionListener( new ActionListener()
@@ -62,11 +63,12 @@ public class BattlePanel extends JPanel implements ActionListener
 		    		int damage = rnd.nextInt(20) + 1;
 		    		slime.hp -= damage;
 		    		hero.setMp(hero.mp -= 4);
-		    		System.out.println("You dealt " + damage + " to the blue slime!\n" +
-		        		"Slime now has " + slime.hp + " health!");
+		    		hpmp.setText("HP: " + hero.getHp() + " MP: " + hero.getMp());
+		    		label1.setText("You dealt " + damage + " to the blue slime!\n" +
+		        		" Slime now has " + slime.hp + " health!");
 		    	}
 		    	else
-		    		System.out.println("You don't have enough MP!");
+		    		label1.setText("You don't have enough MP!");
 		    }
 		});
 		potion.addActionListener( new ActionListener()
@@ -76,8 +78,9 @@ public class BattlePanel extends JPanel implements ActionListener
 		    {
 		        hero.setHp(hero.hp += 15);
 		        hero.getHp();
-		        System.out.println("You used a potion!!\n" +
-		        		"You now have " + hero.getHp() + " health!");
+		        hpmp.setText("HP: " + hero.getHp() + " MP: " + hero.getMp());
+		        label1.setText("You used a potion!!\n" +
+		        		" You now have " + hero.getHp() + " health!");
 		    }
 		});
 		ether.addActionListener( new ActionListener()
@@ -86,8 +89,9 @@ public class BattlePanel extends JPanel implements ActionListener
 		    public void actionPerformed(ActionEvent e)
 		    {
 		        hero.setMp(hero.mp += 15);
-		        System.out.println("You used an ether!\n" +
-		        		"You now have " + hero.getMp() + " magic points!");
+		        hpmp.setText("HP: " + hero.getHp() + " MP: " + hero.getMp());
+		        label1.setText("You used an ether!\n" +
+		        		" You now have " + hero.getMp() + " magic points!");
 		    }
 		});
 		add(hpmp);
