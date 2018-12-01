@@ -8,11 +8,10 @@ public class Main
 	{
     	JFrame frame = new JFrame("DragonQuest Random Encounter");
     	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-    	
     JTabbedPane tp = new JTabbedPane();
-    	tp.addTab("Welcome", new WelcomePanel());
-    	tp.addTab("Help", new HelpPanel());
-    	tp.addTab("Battle", new BattlePanel());
+    	tp.addTab("Welcome", new JPanel());
+    	tp.addTab("Help", new JPanel());
+    	tp.addTab("Battle", new JPanel());
     	
     	frame.getContentPane().add(tp);
 		frame.pack();
