@@ -1,12 +1,11 @@
 package test;
 
-import javax.swing.JFrame;
-import javax.swing.JTabbedPane;
+import javax.swing.*;
 
-public class Main extends Player{
-
-    public static void main(String[] args) {
-    	
+public class Main 
+{
+	public static void main(String[] args) 
+	{
     	JFrame frame = new JFrame("DragonQuest Random Encounter");
     	frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     	
@@ -16,8 +15,7 @@ public class Main extends Player{
     	tp.addTab("Battle", new BattlePanel());
     	
     	frame.getContentPane().add(tp);
-        frame.pack();
-        frame.setVisible(true);
-    	
-           }
+		frame.pack();
+		frame.setVisible(true);
+	}
 }

@@ -6,14 +6,16 @@ import javax.swing.*;
 
 import javax.swing.*;
 
-public class BattlePanel extends JPanel {
+public class BattlePanel extends JPanel 
+{
 
 	Player Hero = new Player("Hero", 50, 20);
     Player Slime = new Player("Slime", 50, 20);
 	private JLabel label1;
 	private JButton button1, button2, button3, button4;
    
-	public BattlePanel() {
+	public BattlePanel() 
+	{
 		setPreferredSize(new Dimension(300, 75));
 	    setBackground(Color.black);
 	    
@@ -35,6 +37,5 @@ public class BattlePanel extends JPanel {
 	    add(button4);
 	    pack();
 	    setVisible(true);
-	   
 	}
 }
