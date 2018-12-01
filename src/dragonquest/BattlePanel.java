@@ -1,4 +1,5 @@
-package test;
+package dragonquest;
+
 import java.awt.*;
 import java.awt.event.*;
 import java.util.Random;
