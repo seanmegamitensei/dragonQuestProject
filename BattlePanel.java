@@ -1,7 +1,8 @@
 package test;
 import java.awt.*;
-import java.awt.event.ActionEvent;
+import java.awt.event.*;
 import java.util.Random;
+import javax.swing.*;
 
 import javax.swing.*;
 
@@ -32,6 +33,8 @@ public class BattlePanel extends JPanel {
 	    add(button2);
 	    add(button3);
 	    add(button4);
+	    pack();
+	    setVisible(true);
 	   
 	}
 }
